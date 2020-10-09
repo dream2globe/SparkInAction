@@ -3,7 +3,7 @@ The Example Codes of "Spark In Action"
 
 ## Install
 - 책의 실습 예제를 편하게 구동할 수 있도록 Spark와 Jupyter Notebook이 설치된 docker를 사용합니다. 
-- 따라서 아래의 프로그램을 먼저 설치합니다. 
+- 따라서 아래의 프로그램을 설치합니다. 
     - docker : https://docs.docker.com/engine/install/
     - docker-compose : https://docs.docker.com/compose/
     - git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -22,7 +22,7 @@ cd SparkDefinitiveGuide
 ```shell
     db:
         volumes:
-            - /home/shyeon/workspace/mysql/_dbdump:/var/lib/mysql  # mariadb 파일의 저장 장소
+            - ~/workspace/mysql/_dbdump:/var/lib/mysql  # mariadb 파일의 저장 장소
         
     spark:
         volumes:
@@ -30,7 +30,7 @@ cd SparkDefinitiveGuide
 ```
 
 #### docker 실행
-- 클론한 폴더로 이동하여 아래의 명령어로 도커를 실행합니다. \-d 옵션은 Background 실행을 의미합니다.
+- 아래의 명령어로 도커를 실행합니다. \-d 옵션은 Background 실행을 의미합니다.
 ```shell
     docker-compose up -d
 ```
