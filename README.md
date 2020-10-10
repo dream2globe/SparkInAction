@@ -2,11 +2,15 @@
 The Example Codes of "Spark In Action"
 
 ## Install
-- 책의 실습 예제를 편하게 구동할 수 있도록 Spark와 Jupyter Notebook이 설치된 docker를 사용합니다. 
-- 따라서 아래의 프로그램을 설치합니다. 
+- 책의 실습 예제를 편하게 구동할 수 있도록 Spark와 Jupyter Notebook이 설치된 docker를 사용합니다.
+- 아래의 프로그램을 설치합니다.(OS별 설치법 참고)
     - docker : https://docs.docker.com/engine/install/
     - docker-compose : https://docs.docker.com/compose/
     - git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+- 윈도우는 아래 링크를 참고하여 WSL로 리눅스를 설치하신 후에 진행하시면 편리합니다.
+    1. [WSL를 활용하여 윈도우에서 우분투 설치하기](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)
+    2. [Docker Desktop 설치하기](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)
+    3. [WSL과 windows 폴더 mount 정보 (Optional)](https://docs.microsoft.com/ko-kr/windows/wsl/faq)
 
 ## Clone the repository 
 아래 명령어로 repository 를 clone 한 후, 생성된 폴더로 이동합니다.
