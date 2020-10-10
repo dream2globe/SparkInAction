@@ -3,7 +3,7 @@ version: "2.4"
 services:
         db:
                 image: mariadb:latest
-                container_name: mariadb_spark_sia
+                container_name: mariadb_sia
                 volumes:
                         - /home/shyeon/workspace/mysql/_dbdump:/var/lib/mysql
                 environment:
