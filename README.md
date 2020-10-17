@@ -16,7 +16,7 @@ The Example Codes of "Spark In Action"
 아래 명령어로 repository 를 clone 한 후, 생성된 폴더로 이동합니다.
 ```shell
 git clone https://github.com/dream2globe/SparkInAction.git
-cd SparkDefinitiveGuide
+cd SparkInAction
 ```
 ## Run docker-compose
 
