@@ -1,0 +1,8 @@
+[submodule "notebooks/book-samples"]
+	path = notebooks/book-samples
+	url = https://github.com/spark-in-action/first-edition
+	branch = master
+[submodule "book-samples"]
+	path = book-samples
+	url = https://github.com/spark-in-action/first-edition
+	branch = master
