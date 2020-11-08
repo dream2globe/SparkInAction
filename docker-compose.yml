@@ -20,6 +20,7 @@ services:
                         retries: 3
         spark:
                 image: dream2globe/my-spark-env
+                # build: .
                 container_name: mysparklab
                 volumes:
                         - ~/workspace/spark/SparkInAction:/home/jovyan/work
@@ -27,13 +28,6 @@ services:
                         - 8888:8888
                         - 4040:4040
                         - 4041:4041
-                depends_on:
-                        mariadb:
-                                condition: service_healthy
-        hive-metastore:
-                build: .
-                container_name: hive-metastore
-                ports:
                         - 9083:9083
                 depends_on:
                         mariadb:

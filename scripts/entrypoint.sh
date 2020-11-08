@@ -1,8 +1,13 @@
 #!/bin/sh
 
-export HADOOP_HOME=/opt/hadoop-3.2.0
-export HADOOP_CLASSPATH=${HADOOP_HOME}/share/hadoop/tools/lib/aws-java-sdk-bundle-1.11.375.jar:${HADOOP_HOME}/share/hadoop/tools/lib/hadoop-aws-3.2.0.jar
-export JAVA_HOME=/usr/local/openjdk-8
+#export HADOOP_HOME=/usr/local/hadoop-3.2.0
+export HIVE_HOME=/usr/local/apache-hive-metastore-3.0.0-bin
+export JAVA_HOME=/usr
+export PATH=$PATH:$HIVE_HOME/bin
 
-/opt/apache-hive-metastore-3.0.0-bin/bin/schematool -initSchema -dbType mysql
-/opt/apache-hive-metastore-3.0.0-bin/bin/start-metastore
+# schematool -initSchema -dbType mysql
+nohup start-metastore 1> /dev/null 2>&1 &
+
+cd /home/jovyan/work
+jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --no-browser
+
