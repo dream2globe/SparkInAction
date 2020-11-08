@@ -1,37 +1,41 @@
-version: "2.4"
+version: "2"
 
 services:
-        db:
+        mariadb:
                 image: mariadb:latest
-                container_name: mariadb_sia
+                container_name: mariadb
                 volumes:
                         - /home/shyeon/workspace/mysql:/var/lib/mysql
                 environment:
-                        - MYSQL_DATABASE=sparklab
-                        - MYSQL_ROOT_PASSWORD=9838
+                        MYSQL_ROOT_PASSWORD: admin
+                        MYSQL_USER: admin
+                        MYSQL_PASSWORD: admin
+                        MYSQL_DATABASE: metastore_db
                 ports:
-                        - "3306:3306"
+                        - 3306:3306
                 healthcheck:
-                        test: mysql -p9838 -Dsparklab -e "SHOW DATABASES"
+                        test: mysql -padmin -uadmin -e "SHOW DATABASES"
                         interval: 10s
                         timeout: 3s
                         retries: 3
-
         spark:
-                #                build:
-                #                        context: .
-                #                        dockerfile: ./Dockerfile
                 image: dream2globe/my-spark-env
-                container_name: mysparklab_sia
+                container_name: mysparklab
                 volumes:
                         - ~/workspace/spark/SparkInAction:/home/jovyan/work
                 ports:
-                        - "8888:8888"
-                        - "4040:4040"
-                        - "4041:4041"
-                          #                command:
-                          #                        - python
-                          #                        - app.py
+                        - 8888:8888
+                        - 4040:4040
+                        - 4041:4041
                 depends_on:
-                        db:
+                        mariadb:
                                 condition: service_healthy
+        hive-metastore:
+                build: .
+                container_name: hive-metastore
+                ports:
+                        - 9083:9083
+                depends_on:
+                        mariadb:
+                                condition: service_healthy
+
