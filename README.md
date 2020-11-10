@@ -18,6 +18,12 @@ The Example Codes of "Spark In Action"
 git clone https://github.com/dream2globe/SparkInAction.git
 cd SparkInAction
 ```
+책 예제를 다운하기 원하신다면 추가로 아래 명령어를 실행합니다.
+```shell
+git submodule update --init --recursive
+```
+
+
 ## Run docker-compose
 
 #### 실행 전 개인 개발환경으로 설정 변경  
