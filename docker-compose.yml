@@ -19,8 +19,8 @@ services:
                         timeout: 3s
                         retries: 3
         spark:
-                image: dream2globe/my-spark-env
-                # build: .
+                # image: dream2globe/my-spark-env
+                build: .
                 container_name: mysparklab
                 volumes:
                         - ~/workspace/spark/SparkInAction:/home/jovyan/work
