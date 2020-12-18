@@ -23,9 +23,9 @@ services:
         build: .
         container_name: mysparklab
         volumes:
-            - ~/workspace/spark/SparkInAction:/home/jovyan/work
+            - ~/workspace/apaches/spark-in-action:/home/jovyan/work
         ports:
-            - 8888:8888
+            - 8889:8888
             - 4040:4040
             - 4041:4041
             - 9083:9083
