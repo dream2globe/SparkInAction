@@ -38,6 +38,8 @@ git submodule update --init --recursive
         volumes:
             - ~/workspace/spark/SparkInAction:/home/jovyan/work
 ```
+- scripts/entrypoint.sh 파일 내용 중 "schematool -initSchema -dbType mysql" 부분의 주석을 제거
+    - 최초 1회만 실행하고 2번째 부터는 다시 제거해야 함
 
 #### docker 실행
 - 아래의 명령어로 도커를 실행합니다. \-d 옵션은 Background 실행을 의미합니다.
